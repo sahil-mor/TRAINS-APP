@@ -1,0 +1,25 @@
+<% include partials/header %>
+        <h1>TRAIN FARE</h1>
+        <h2>INPUT DETAILS OF TRAIN</h2>
+        <form action="/trainFare" class="form-inline" method="POST">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" required placeholder="TRAIN NUMBER" name="number">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" required placeholder="FROM STATION CODE" name="from">
+            </div>    
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" required placeholder="TO STATION CODE" name="to">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">QUOTA</label>
+                <select id="inputState" required name="quota" class="form-control">
+                    <option selected value="GN">GN</option>
+                    <option value="CK">CK</option>
+                </select>
+            </div>
+           
+            <button type="submit" class="btn btn-primary mb-2">CHECK TRAINS</button>
+        </form>
+
+<% include partials/footer %>

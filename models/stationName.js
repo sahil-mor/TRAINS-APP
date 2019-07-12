@@ -7,7 +7,8 @@ function StationName(req,res){
         var parsedName = JSON.parse(body)
         res.render("stationNameList",{ Names : parsedName})
         }else{
-            res.send(error)
+            console.log(error)
+            res.render("index")
         }
     })
 }

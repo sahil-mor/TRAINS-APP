@@ -1,0 +1,28 @@
+<% include partials/header %>
+<div>
+    <h1><%=message %> TRAIN DETAILS</h1>
+    <h2>STATUS : <%= data["Status"] %> </h2>
+    <h2>TOTAL TRAINS : <%= data["TotalTrain"] %></h2>
+    <table class="table table-hover">
+        <tr class="bg-primary">
+           <th>TRAIN NAME</th>     
+           <th>TRAIN NUMBER</th>     
+           <th>SOURCE</th>     
+           <th>DEPARTURE</th>     
+           <th>DESTINATION</th>     
+           <th>ARRIVAL</th>         
+        </tr>
+        <% data["Trains"].forEach(function(train){ %>
+            <tr>
+                <th class="table-success"><%= train["TrainName"] %></th>
+                <th class="table-warning"><%= train["TrainNumber"] %></th>
+                <th class="table-primary"><%= train["Source"] %></th>
+                <th class="table-danger"><%= train["Departure"] %></th>
+                <th class="table-secondary"><%= train["Destination"] %></th>
+                <th class="table-dark"><%= train["Arrival"] %></th>
+            </tr>
+        <% }) %>
+    </table>
+</div>
+
+<% include partials/footer %>

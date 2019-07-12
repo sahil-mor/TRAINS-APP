@@ -1,0 +1,9 @@
+<% include partials/header %>
+<h1>SEARCH CANCELLED TRAINS</h1>
+<form class="form-inline" method="POST" action="/cancelledTrains">
+  <div class="form-group mx-sm-3 mb-2">
+      <input type="text" class="form-control" required placeholder="DATE-YYYYMMDD" name="date">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">CHECK TRAINS</button>
+</form>
+<% include partials/footer %>

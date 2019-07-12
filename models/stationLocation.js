@@ -7,7 +7,8 @@ module.exports = function(req,res){
             parsedData = JSON.parse(body)
             res.render("stationLocationData",{data:parsedData})
         }else{
-            res.send(error)
+            console.log(error)
+            res.render("index")
         }
     })
 }

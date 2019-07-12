@@ -1,0 +1,40 @@
+<% include partials/header %>       
+        <h1>RESCHEDULED TRAINS</h1>
+        <h2>STATUS : <%= List["Status"] %></h2>
+        <h2>LAST UPDATE : <%= List["LastUpdate"] %></h2>
+        <h2>TOTAL TRAINS : <%= List["TotalTrain"] %>
+        <% if(List["Trains"].length !== 0]){ %>
+            <i class="fa fa-frown-o" aria-hidden="true"></i>
+        <% } %>
+        </h2>
+        <% if(List.hasOwnProperty("Trains")){ %>
+            <% if(List["Trains"].length !== 0){ %>
+                <table class="table table-hover">
+                    <tr class="bg-primary">
+                        <th>TRAIN NUMBER</th>
+                        <th>TRAIN NAME</th>
+                        <th>SOURCE</th>
+                        <th>START DATE</th>
+                        <th>START TIME</th>
+                        <th>DESTINATION</th>
+                        <th>RESCHEDULED DATE</th>
+                        <th>RESCHEDULED TIME</th>
+                    </tr>
+                </table>
+                <% List["Trains"].forEach(function(train){ %>
+                    <tr>
+                       <th class="table-success"> <%= train["TrainNumber"] %> </th>     
+                       <th class="table-secondary"> <%= train["TrainName"] %> </th>         
+                       <th class="table-danger"> <%= train["Source"] %> </th>             
+                       <th class="table-info"> <%= train["StartDate"] %> </th>                 
+                       <th class="table-warning"> <%= train["StartTime"] %> </th>                 
+                       <th class="bg-secondary"> <%= train["Destination"] %> </th>                 
+                       <th class="table-primary"> <%= train["RecheduledDate"] %> </th> 
+                       <th class="table-success"> <%= train["RescheduledTime"] %> </th> 
+                    </tr>
+                <% }) %>
+            <% } else{ %>
+                <h2>NO RESCHEDULED TRAINS TODAY <i class="fa fa-smile-o" aria-hidden="true"></i>  !!!</h2>
+            <% } %>
+        <% } %>
+<% include partials/footer %>

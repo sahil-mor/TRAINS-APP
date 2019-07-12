@@ -16,7 +16,6 @@ var CancelledTrains = require("./models/cancelledTrains")
 var StationLocation = require("./models/stationLocation")
 var RajdhaniTrain = require("./models/rajdhaniTrain")
 var ShatabdiTrain = require("./models/ShatabdiTrain")
-var apiKey = "651a205050350fa2c2744c5a4d6e9503";
 
 app.get("/",function(req,res){
     res.render("home")

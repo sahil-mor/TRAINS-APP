@@ -1,0 +1,17 @@
+<% include partials/header %>   
+        <h1>SCHEDULED TRAINS</h1>
+        <h2>PLEASE ENTER THE CODES OF STATION NOT NAME</h2>
+        <form action="/listOfTrains" class="form-inline" method="POST">
+            <div>
+                <input type="text" class="form-control" required placeholder="FROM STATION CODE" required name="from">
+            </div>
+            <div>
+                <input type="text" class="form-control" required placeholder="TO STATION CODE" required name="to">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary mb-2">CHECK STATUS</button>
+            </div>
+        </form>
+
+
+<% include partials/footer %>

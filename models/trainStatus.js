@@ -9,7 +9,8 @@ function TrainStatus(req,res){
             res.render("liveStatus",{ Status : parsedStatus })
         }
         else{
-            res.send(error)
+            console.log(error)
+            res.render("index")
         }
     })
 }

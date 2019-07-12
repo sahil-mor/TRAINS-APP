@@ -1,0 +1,37 @@
+<% include partials/header %>
+        <h1>SEARCH STATUS : <%= Trains["Status"] %> </h1>
+        <h2>NUMBER OF TRAINS : <%= Trains["TotalTrains"] %> </h2>
+        <% if(Trains.hasOwnProperty("Trains")){ %>
+            <% if(Trains["Trains"] !== null){ %>
+                <table class="table table-hover">
+                    <tr class="bg-primary">
+                        <th>TRAIN NUMBER</th>
+                        <th>TRAIN NAME</th>
+                        <th>SOURCE</th>    
+                        <th>DESTINATION</th>    
+                        <th>DEPARTURE TIME</th>    
+                        <th>ARRIVAL TIME</th>    
+                        <th>TRAVELLING TIME</th> 
+                        <th>TRAIN TYPE</th>       
+                    </tr>
+                    <% Trains["Trains"].forEach(function(train){ %>
+                        <tr>
+                            <th class="table-warning"> <%= train["TrainNo"] %> </th>          
+                            <th class="table-success"> <%= train["TrainName"] %> </th>      
+                            <th class="table-danger"> <%= train["Source"] %> </th>      
+                            <th class="table-secondary"> <%= train["Destination"] %> </th>      
+                            <th class="table-info"> <%= train["DepartureTime"] %> </th>      
+                            <th class="table-primary"> <%= train["ArrivalTime"] %> </th>      
+                            <th class="bg-success"> <%= train["TravelTime"] %> </th>      
+                            <th class="bg-warning"> <%= train["TrainType"] %> </th>         
+                    <% }) %>
+                </table>
+            <% } else{ %>
+                <h1>SORRY NO TRAIN FOUND</h1>
+            <% } %>
+        <% } %>
+        
+    </div>
+</div>
+
+<% include partials/footer %>

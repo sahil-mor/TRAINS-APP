@@ -1,0 +1,23 @@
+<% include partials/header %>
+        <h1>CHOOSE YOUR STATION CODE</h1>
+        <h2>SEARCH STATUS : <%= Names["Status"] %> </h2>
+        <% if(Names.hasOwnProperty("Station")){ %>
+            <% if(Names["Station"].length !== 0){ %>
+                <table class="table table-hover table-dark">
+                    <tr>
+                        <th>NAME(ENGLISH)</th>
+                        <th>NAME(HINDI)</th>
+                        <th>STATION CODE</th>
+                    </tr>
+                <% Names["Station"].forEach(function(name){ %>
+                    <tr>
+                        <th> <%= name["NameEn"] %>  </th> 
+                        <th> <%= name["NameHn"] %>  </th> 
+                        <th> <%= name["StationCode"] %> </th> 
+                    </tr>
+                <% }) %>
+            </table>
+            <% } %>
+        <% } %>
+
+<% include partials/footer %>

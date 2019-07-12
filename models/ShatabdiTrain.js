@@ -7,7 +7,8 @@ module.exports = function(req,res){
             parsedData = JSON.parse(body)
             res.render("SpecialTrainData",{ message : "SHATABDI" , data : parsedData})
         }else{
-            res.send(error)
+            console.log(error)
+            res.render("index")
         }
     })
 }

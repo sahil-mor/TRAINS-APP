@@ -9,7 +9,8 @@ function ListOfTrains(req,res){
             res.render("trainList",{Trains : parsedTrains})
         }
         else{
-            res.send(error)
+            console.log(error)
+            res.render("index")
         }
     })
 }

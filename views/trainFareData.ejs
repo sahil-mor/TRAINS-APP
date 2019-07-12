@@ -1,0 +1,39 @@
+<% include partials/header %>
+        <h1>TRAIN FARE DETAILS</h1>
+        <div>
+            <table class="table table-hover table-dark">
+                <tr>
+                    <th>TRAIN NAME</th>
+                    <th>TRAIN NUMBER</th>
+                    <th>FROM</th>            
+                    <th>TO</th>        
+                    <th>DISTANCE</th>        
+                    <th>TRAIN TYPE</th>                    
+                </tr>
+                <tr>
+                    <th><%= Data["TrainName"] %></th>
+                    <th><%= Data["TrainNumber"] %></th>
+                   <th><%= Data["From"] %></th>                 
+                   <th><%= Data["To"] %></th>             
+                   <th><%= Data["Distance"] %></th>             
+                   <th><%= Data["TrainType"] %></th>             
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table class="table table-hover">
+                <tr class="bg-primary">
+                    <th>NAME</th>
+                    <th>CODE</th>
+                    <th>FARE</th>
+                </tr>
+                <% Data["Fares"].forEach(function(data){ %>
+                    <tr>
+                        <th class="table-success"><%= data["Name"] %></th>
+                        <th class="table-secondary"><%= data["Code"] %></th>
+                        <th class="table-danger"><%= data["Fare"] %>/-</th>
+                    </tr>
+                <% }) %>
+            </table>
+        </div>
+<% include partials/footer %>

@@ -7,6 +7,9 @@ function RescheduledTrains(req,res){
         if(!error && response.statusCode == 200){
             parsedRescheduledTrains = JSON.parse(body)
             res.render("RescheduledTrainsList",{List : parsedRescheduledTrains}) 
+        }else{
+            console.log(error)
+            res.render("index")
         }
     })
 }

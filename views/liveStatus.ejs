@@ -1,0 +1,57 @@
+<% include partials/header %>
+        <h1>MESSAGE : <%= Status["Message"] %></h1>
+        <h2>TRAIN NUMBER : <%= Status["TrainNumber"] %> </h2>
+        <h2>CURRENT STATION : </h2>
+        <table class="table table-hover table-dark">
+            <tr>
+                <th>STATION NAME</th>                
+                <th>STATION CODE</th> 
+                <th>DAY</th>           
+                <th>SCHEDULE ARRIVAL</th>            
+                <th>ACTUAL ARRIVAL</th>            
+                <th>DELAY IN ARRIVAL</th>            
+                <th>SCHEDULE DEPARTURE</th>            
+                <th>ACTUAL DEPARTURE</th>            
+                <th>DELAY IN DEPARTURE</th>                   
+            </tr>
+            <tr>
+                <th> <%= Status["CurrentStation"]["StationName"] %> </th>
+                <th> <%= Status["CurrentStation"]["StationCode"] %> </th>
+                <th> <%= Status["CurrentStation"]["Day"] %> </th>
+                <th> <%= Status["CurrentStation"]["ScheduleArrival"] %> </th>
+                <th> <%= Status["CurrentStation"]["ActualArrival"] %> </th>
+                <th> <%= Status["CurrentStation"]["DelayInArrival"] %> </th>
+                <th> <%= Status["CurrentStation"]["ScheduleDeparture"] %> </th>
+                <th> <%= Status["CurrentStation"]["ActualDeparture"] %> </th>
+                <th> <%= Status["CurrentStation"]["DelayInDeparture"] %> </th>
+            </tr>
+        </table>
+        <h2>TRAIN ROUTE : </h2>
+        <table class="table table-hover">
+            <tr class="bg-primary">
+                <th>STATION NAME</th>                
+                <th>STATION CODE</th> 
+                <th>DAY</th>           
+                <th>SCHEDULE ARRIVAL</th>            
+                <th>ACTUAL ARRIVAL</th>            
+                <th>DELAY IN ARRIVAL</th>            
+                <th>SCHEDULE DEPARTURE</th>            
+                <th>ACTUAL DEPARTURE</th>            
+                <th>DELAY IN DEPARTURE</th> 
+            </tr>
+            <% Status["TrainRoute"].forEach(function(route){ %>
+                <tr>
+                   <th class="table-success"><%= route["StationName"] %></th>       
+                   <th class="table-success"><%= route["StationCode"] %></th> 
+                   <th class="table-success"><%= route["Day"] %></th>
+                   <th class="table-success"><%= route["ScheduleArrival"] %></th> 
+                   <th class="table-success"><%= route["ActualArrival"] %></th> 
+                   <th class="table-success"><%= route["DelayInArrival"] %></th> 
+                   <th class="table-success"><%= route["ScheduleDeparture"] %></th> 
+                   <th class="table-success"><%= route["ActualDeparture"] %></th> 
+                   <th class="table-success"><%= route["DelayInDeparture"] %></th> 
+                </tr>
+            <% }) %>
+        </table>
+
+<% include partials/footer %>

@@ -7,7 +7,8 @@ function TrainFare(req,res){
             parsedData = JSON.parse(body)
             res.render("trainFareData",{Data : parsedData})
         }else{
-            res.send(error)
+            console.log(error)
+            res.render("index")
         }
     })
 }

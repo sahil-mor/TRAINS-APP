@@ -1,0 +1,40 @@
+<% include partials/header %>
+<div>
+    <h1>CANCELLED TRAINS</h1>
+    <h2>STATUS : <%= data["Status"] %> </h2>  
+    <h2>LAST UPDATED : <%= data["LastUpdate"] %></h2>
+    <h2>TOTAL TRAINS : <%= data["TotalTrain"]%>
+        <% if(data["Trains"].length !== 0){ %>
+            <i class="fa fa-frown-o" aria-hidden="true"></i>
+        <% } %>
+    </h2>
+</div>
+<div>
+    <% if(data.hasOwnProperty("Trains")){ %>
+        <% if(data["Trains"].length !== 0){ %>
+    <table class="table table-hover">
+        <tr class="bg-primary">
+            <th>TRAIN NAME</th>    
+            <th>TRAIN NUMBER</th>    
+            <th>DATE</th>    
+            <th>TYPE</th>    
+            <th>DESTINATION</th>       
+            <th>SOURCE</th> 
+        </tr>
+        <% data["Trains"].forEach(function(train){ %>
+            <tr>
+                <th class="table-success"><%= train["TrainName"]%></th>
+                <th class="table-primary"><%= train["TrainNumber"]%></th>
+                <th class="table-danger"><%= train["StartDate"]%></th>
+                <th class="table-secondary"><%= train["TrainType"]%></th>
+                <th class="table-info"><%= train["Destination"]%></th>
+                <th class="table-warning"><%= train["Source"]%></th>
+            </tr>
+            <% }) %>
+            <% } else{ %>
+                <h2>NO RESCHEDULED TRAINS TODAY <i class="fa fa-smile-o" aria-hidden="true"></i>  !!!</h2>
+            <% } %>
+        <% } %>
+    </table>
+</div>
+<% include partials/footer %>
